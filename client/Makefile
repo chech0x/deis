@@ -11,21 +11,22 @@ COMPONENT = $(notdir $(repo_path))
 IMAGE =  $(IMAGE_PREFIX)/$(COMPONENT):$(BUILD_TAG)
 
 build:
-	CGO_ENABLED=0 godep go build -a -installsuffix cgo -ldflags '-s' -o deis .
-	@$(call check-static-binary,deis)
+	CGO_ENABLED=0 godep go build -a -installsuffix cgo -ldflags '-s' -o talka .
+	@$(call check-static-binary,talka)
 
 install: build
 	cp deis $$GOPATH/bin
 
 installer: build
 	@if [ ! -d makeself ]; then git clone -b single-binary https://github.com/deis/makeself.git; fi
-	PATH=./makeself:$$PATH BINARY=deis makeself.sh --bzip2 --current --nox11 . \
+	PATH=./makeself:$$PATH BINARY=talka makeself.sh --bzip2 --current --nox11 . \
 		deis-cli-`cat deis-version`-`go env GOOS`-`go env GOARCH`.run \
-		"Deis CLI" "echo \
-		&& echo 'deis is in the current directory. Please' \
-		&& echo 'move deis to a directory in your search PATH.' \
+		"Talka CLI" "echo \
+		&& echo 'Talka se encuentra en el directorio actual. Por favor' \
+		&& echo 'mueva talka a un directorio que se encuentre agregado' \
+		&& echo 'en la variable de abiente PATH.' \
 		&& echo \
-		&& echo 'See http://docs.deis.io/ for documentation.' \
+		&& echo 'Vea http://talka.cl/ para más documentación.' \
 		&& echo"
 
 setup-root-gotools:
