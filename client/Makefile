@@ -20,7 +20,7 @@ install: build
 installer: build
 	@if [ ! -d makeself ]; then git clone -b single-binary https://github.com/deis/makeself.git; fi
 	PATH=./makeself:$$PATH BINARY=talka makeself.sh --bzip2 --current --nox11 . \
-		deis-cli-`cat deis-version`-`go env GOOS`-`go env GOARCH`.run \
+		talka-cli-`cat talka-version`-`go env GOOS`-`go env GOARCH`.run \
 		"Talka CLI" "echo \
 		&& echo 'Talka se encuentra en el directorio actual. Por favor' \
 		&& echo 'mueva talka a un directorio que se encuentre agregado' \
