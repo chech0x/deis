@@ -14,7 +14,7 @@ ps:list        list application processes
 ps:restart     restart an application or its process types
 ps:scale       scale processes (e.g. web=4 worker=2)
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -43,7 +43,7 @@ func psList(argv []string) error {
 	usage := `
 Lists processes servicing an application.
 
-Usage: deis ps:list [options]
+Use: talka ps:list [options]
 
 Options:
   -a --app=<app>
@@ -71,7 +71,7 @@ func psRestart(argv []string) error {
 	usage := `
 Restart an application, a process type or a specific process.
 
-Usage: deis ps:restart [<type>] [options]
+Use: talka ps:restart [<type>] [options]
 
 Arguments:
   <type>
@@ -96,7 +96,7 @@ func psScale(argv []string) error {
 	usage := `
 Scales an application's processes by type.
 
-Usage: deis ps:scale <type>=<num>... [options]
+Use: talka ps:scale <type>=<num>... [options]
 
 Arguments:
   <type>

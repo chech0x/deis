@@ -23,8 +23,8 @@ func responseLimit(limit string) (int, error) {
 
 // PrintUsage runs if no matching command is found.
 func PrintUsage() {
-	fmt.Fprintln(os.Stderr, "Found no matching command, try 'deis help'")
-	fmt.Fprintln(os.Stderr, "Usage: deis <command> [<args>...]")
+	fmt.Fprintln(os.Stderr, "Found no matching command, try 'talka help'")
+	fmt.Fprintln(os.Stderr, "Usage: talka <command> [<args>...]")
 }
 
 func printHelp(argv []string, usage string) bool {

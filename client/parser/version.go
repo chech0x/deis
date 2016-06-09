@@ -12,9 +12,9 @@ func Version(argv []string) error {
 	usage := `
 Displays the client version.
 
-Usage: deis version
+Use: talka version
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 	if _, err := docopt.Parse(usage, argv, true, "", false, true); err != nil {
 		return err

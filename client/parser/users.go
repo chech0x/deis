@@ -12,7 +12,7 @@ Valid commands for users:
 
 users:list        list all registered users
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -38,7 +38,7 @@ func usersList(argv []string) error {
 Lists all registered users.
 Requires admin privilages.
 
-Usage: deis users:list [options]
+Use: talka users:list [options]
 
 Options:
   -l --limit=<num>

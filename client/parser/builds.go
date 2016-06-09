@@ -13,7 +13,7 @@ Valid commands for builds:
 builds:list        list build history for an application
 builds:create      imports an image and deploys as a new release
 
-Use 'deis help [command]' to learn more.
+Use 'deis talka [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -40,7 +40,7 @@ func buildsList(argv []string) error {
 	usage := `
 Lists build history for an application.
 
-Usage: deis builds:list [options]
+Use: talka builds:list [options]
 
 Options:
   -a --app=<app>
@@ -70,7 +70,7 @@ Creates a new build of an application. Imports an <image> and deploys it to Deis
 as a new release. If a Procfile is present in the current directory, it will be used
 as the default process types for this application.
 
-Usage: deis builds:create <image> [options]
+Use: talka builds:create <image> [options]
 
 Arguments:
   <image>

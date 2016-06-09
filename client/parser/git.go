@@ -14,7 +14,7 @@ Valid commands for git:
 
 git:remote          Adds git remote of application to repository
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -33,7 +33,7 @@ func gitRemote(argv []string) error {
 	usage := `
 Adds git remote of application to repository
 
-Usage: deis git:remote [options]
+Use: talka git:remote [options]
 
 Options:
   -a --app=<app>

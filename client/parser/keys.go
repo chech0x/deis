@@ -14,7 +14,7 @@ keys:list        list SSH keys for the logged in user
 keys:add         add an SSH key
 keys:remove      remove an SSH key
 
-Use 'deis help [command]' to learn more.
+Use 'deis talka [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -43,7 +43,7 @@ func keysList(argv []string) error {
 	usage := `
 Lists SSH keys for the logged in user.
 
-Usage: deis keys:list [options]
+Use: talka keys:list [options]
 
 Options:
   -l --limit=<num>
@@ -69,7 +69,7 @@ func keyAdd(argv []string) error {
 	usage := `
 Adds SSH keys for the logged in user.
 
-Usage: deis keys:add [<key>]
+Use: talka keys:add [<key>]
 
 Arguments:
   <key>
@@ -91,7 +91,7 @@ func keyRemove(argv []string) error {
 	usage := `
 Removes an SSH key for the logged in user.
 
-Usage: deis keys:remove <key>
+Use: talka keys:remove <key>
 
 Arguments:
   <key>

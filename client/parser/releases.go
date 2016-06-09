@@ -17,7 +17,7 @@ releases:list        list an application's release history
 releases:info        print information about a specific release
 releases:rollback    return to a previous release
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -46,7 +46,7 @@ func releasesList(argv []string) error {
 	usage := `
 Lists release history for an application.
 
-Usage: deis releases:list [options]
+Use: talka releases:list [options]
 
 Options:
   -a --app=<app>
@@ -74,7 +74,7 @@ func releasesInfo(argv []string) error {
 	usage := `
 Prints info about a particular release.
 
-Usage: deis releases:info <version> [options]
+Use: talka releases:info <version> [options]
 
 Arguments:
   <version>
@@ -100,7 +100,7 @@ func releasesRollback(argv []string) error {
 	usage := `
 Rolls back to a previous application release.
 
-Usage: deis releases:rollback [<version>] [options]
+Use: talka releases:rollback [<version>] [options]
 
 Arguments:
   <version>

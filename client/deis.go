@@ -20,51 +20,51 @@ func main() {
 // Command routes talka commands to their proper parser.
 func Command(argv []string) int {
 	usage := `
-El cliente Talka para línea de comando envía llamados API hacia el controlador Talka.
+El cliente Talka para linea de comando envia llamados API hacia el controlador Talka.
 
-Usage: talka <command> [<args>...]
+Uso: talka <comando> [<args>...]
 
-Option flags::
+Banderas opcionales ::
 
-  -h --help     display help information
-  -v --version  display client version
+  -h --help     muestra esta informacion de ayuda
+  -v --version  muestra la version del cliente
 
-Auth commands::
+comandos de autenticacion (Auth) ::
 
-  register      register a new user with a controller
-  login         login to a controller
-  logout        logout from the current controller
+  register      registra un nuevo usuario en un controlador de talka
+  login         inicia una sesion al controlador de talka
+  logout        cierra la sesion activa hacia el controlador de talka
 
-Subcommands, use 'talka help [subcommand]' to learn more::
+Subcomandos, use 'talka help [subcommando]' para aprender mas::
 
-  apps          manage applications used to provide services
-  ps            manage processes inside an app container
-  config        manage environment variables that define app config
-  domains       manage and assign domain names to your applications
-  builds        manage builds created using 'git push'
-  limits        manage resource limits for your application
-  tags          manage tags for application containers
-  releases      manage releases of an application
-  certs         manage SSL endpoints for an app
+  apps          administra las aplicaciones usadas para proveer servicios
+  ps            administra procesos dentro de un container de aplicacion
+  config        administra las variables de ambiente que definen la configuracion de una aplicacion
+  domains       administra y asigna nombres de dominio a tus aplicaciones
+  builds        administra los builds que han sido creado usando 'git push'
+  limits        administra los limites de recursos para tu aplicacion
+  tags          administra tags para tus containers de aplicaciones
+  releases      administra versiones (release) de una aplicacion
+  certs         administra puntos SSL para una aplicacion
 
-  keys          manage ssh keys used for 'git push' deployments
-  perms         manage permissions for applications
-  git           manage git for applications
-  users         manage users
-  version       display client version
+  keys          administra claves ssh usada para las instalaciones/builds con 'git push'
+  perms         administra los permisos de las aplicaciones
+  git           administra git para las aplicaciones
+  users         administra usuarios
+  version       muestra la version del cliente
 
-Shortcut commands, use 'talka shortcuts' to see all::
+Atajos de comandos, use 'talka shortcuts' para verlos todos::
 
-  create        create a new application
-  scale         scale processes by type (web=2, worker=1)
-  info          view information about the current app
-  open          open a URL to the app in a browser
-  logs          view aggregated log info for the app
-  run           run a command in an ephemeral app container
-  destroy       destroy an application
-  pull          imports an image and deploys as a new release
+  create        crea una nueva aplicacion
+  scale         ayuda a escalar los procesos por tipo (web=2, worker=1)
+  info          visualiza informacion sobre la aplicacion actual
+  open          abre la url de la aplicacion actual en el browser predeterminado
+  logs          visualiza logs de la aplicacion de forma acomulativa
+  run           ejecuta un comando dentro de un container efimero de la aplicacion
+  destroy       destruye una aplicacion y sus artefactos (releases,git,containers)
+  pull          importa una imagen docker y la instala como un nuevo release
 
-Use 'git push talka master' to deploy to an application.
+Use 'git push talka master' para instalar una aplicacion.
 `
 	// Reorganize some command line flags and commands.
 	command, argv := parseArgs(argv)
@@ -77,7 +77,7 @@ Use 'git push talka master' to deploy to an application.
 	}
 
 	if len(argv) == 0 {
-		fmt.Fprintln(os.Stderr, "Usage: talka <command> [<args>...]")
+		fmt.Fprintln(os.Stderr, "Uso: talka <comando> [<args>...]")
 		return 1
 	}
 

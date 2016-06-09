@@ -20,7 +20,7 @@ auth:whoami            display the current user
 auth:cancel            remove the current user account
 auth:regenerate        regenerate user tokens
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -51,7 +51,7 @@ func authRegister(argv []string) error {
 	usage := `
 Registers a new user with a Deis controller.
 
-Usage: deis auth:register <controller> [options]
+Use: talka auth:register <controller> [options]
 
 Arguments:
   <controller>
@@ -90,7 +90,7 @@ func authLogin(argv []string) error {
 	usage := `
 Logs in by authenticating against a controller.
 
-Usage: deis auth:login <controller> [options]
+Use: talka auth:login <controller> [options]
 
 Arguments:
   <controller>
@@ -127,7 +127,7 @@ func authLogout(argv []string) error {
 	usage := `
 Logs out from a controller and clears the user session.
 
-Usage: deis auth:logout
+Use: talka auth:logout
 `
 
 	if _, err := docopt.Parse(usage, argv, true, "", false, true); err != nil {
@@ -141,7 +141,7 @@ func authPasswd(argv []string) error {
 	usage := `
 Changes the password for the current user.
 
-Usage: deis auth:passwd [options]
+Use: talka auth:passwd [options]
 
 Options:
   --password=<password>
@@ -169,7 +169,7 @@ func authWhoami(argv []string) error {
 	usage := `
 Displays the currently logged in user.
 
-Usage: deis auth:whoami
+Use: talka auth:whoami
 `
 
 	if _, err := docopt.Parse(usage, argv, true, "", false, true); err != nil {
@@ -183,7 +183,7 @@ func authCancel(argv []string) error {
 	usage := `
 Cancels and removes the current account.
 
-Usage: deis auth:cancel [options]
+Use: talka auth:cancel [options]
 
 Options:
   --username=<username>
@@ -211,7 +211,7 @@ func authRegenerate(argv []string) error {
 	usage := `
 Regenerates auth token, defaults to regenerating token for the current user.
 
-Usage: deis auth:regenerate [options]
+Use: talka auth:regenerate [options]
 
 Options:
   -u --username=<username>

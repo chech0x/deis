@@ -14,7 +14,7 @@ domains:add           bind a domain to an application
 domains:list          list domains bound to an application
 domains:remove        unbind a domain from an application
 
-Use 'deis help [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 	switch argv[0] {
 	case "domains:add":
@@ -42,7 +42,7 @@ func domainsAdd(argv []string) error {
 	usage := `
 Binds a domain to an application.
 
-Usage: deis domains:add <domain> [options]
+Use: talka domains:add <domain> [options]
 
 Arguments:
   <domain>
@@ -66,7 +66,7 @@ func domainsList(argv []string) error {
 	usage := `
 Lists domains bound to an application.
 
-Usage: deis domains:list [options]
+Use: talka domains:list [options]
 
 Options:
   -a --app=<app>
@@ -94,7 +94,7 @@ func domainsRemove(argv []string) error {
 	usage := `
 Unbinds a domain for an application.
 
-Usage: deis domains:remove <domain> [options]
+Use: talka domains:remove <domain> [options]
 
 Arguments:
   <domain>

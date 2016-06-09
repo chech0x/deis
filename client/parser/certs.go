@@ -14,7 +14,7 @@ certs:list            list SSL certificates for an app
 certs:add             add an SSL certificate to an app
 certs:remove          remove an SSL certificate from an app
 
-Use 'deis help [command]' to learn more.
+Use 'deis talka [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -43,7 +43,7 @@ func certsList(argv []string) error {
 	usage := `
 Show certificate information for an SSL application.
 
-Usage: deis certs:list [options]
+Use: talka certs:list [options]
 
 Options:
   -l --limit=<num>
@@ -69,7 +69,7 @@ func certAdd(argv []string) error {
 	usage := `
 Binds a certificate/key pair to an application.
 
-Usage: deis certs:add <cert> <key> [options]
+Use: talka certs:add <cert> <key> [options]
 
 Arguments:
   <cert>
@@ -104,7 +104,7 @@ func certRemove(argv []string) error {
 	usage := `
 removes a certificate/key pair from the application.
 
-Usage: deis certs:remove <cn> [options]
+Use: talka certs:remove <cn> [options]
 
 Arguments:
   <cn>

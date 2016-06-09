@@ -22,7 +22,7 @@ apps:run           run a command in an ephemeral app container
 apps:destroy       destroy an application
 apps:transfer      transfer app ownership to another user
 
-Use 'deis help [command]' to learn more.
+Use 'deis talka [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -63,7 +63,7 @@ Creates a new application.
 
 - if no <id> is provided, one will be generated automatically.
 
-Usage: deis apps:create [<id>] [options]
+Use: talka apps:create [<id>] [options]
 
 Arguments:
   <id>
@@ -96,7 +96,7 @@ func appsList(argv []string) error {
 	usage := `
 Lists applications visible to the current user.
 
-Usage: deis apps:list [options]
+Usage: talka apps:list [options]
 
 Options:
   -l --limit=<num>
@@ -121,7 +121,7 @@ func appInfo(argv []string) error {
 	usage := `
 Prints info about the current application.
 
-Usage: deis apps:info [options]
+Use: talka apps:info [options]
 
 Options:
   -a --app=<app>
@@ -142,7 +142,7 @@ func appOpen(argv []string) error {
 	usage := `
 Opens a URL to the application in the default browser.
 
-Usage: deis apps:open [options]
+Use: talka apps:open [options]
 
 Options:
   -a --app=<app>
@@ -163,7 +163,7 @@ func appLogs(argv []string) error {
 	usage := `
 Retrieves the most recent log events.
 
-Usage: deis apps:logs [options]
+Use: talka apps:logs [options]
 
 Options:
   -a --app=<app>
@@ -200,7 +200,7 @@ func appRun(argv []string) error {
 Runs a command inside an ephemeral app container. Default environment is
 /bin/bash.
 
-Usage: deis apps:run [options] [--] <command>...
+Use: talka apps:run [options] [--] <command>...
 
 Arguments:
   <command>
@@ -226,7 +226,7 @@ func appDestroy(argv []string) error {
 	usage := `
 Destroys an application.
 
-Usage: deis apps:destroy [options]
+Use: talka apps:destroy [options]
 
 Options:
   -a --app=<app>
@@ -252,7 +252,7 @@ func appTransfer(argv []string) error {
 	usage := `
 Transfer app ownership to another user.
 
-Usage: deis apps:transfer <username> [options]
+Use: talka apps:transfer <username> [options]
 
 Arguments:
   <username>

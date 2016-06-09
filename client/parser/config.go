@@ -16,7 +16,7 @@ config:unset       unset environment variables for an app
 config:pull        extract environment variables to .env
 config:push        set environment variables from .env
 
-Use 'deis help [command]' to learn more.
+Use 'deis talka [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -49,7 +49,7 @@ func configList(argv []string) error {
 	usage := `
 Lists environment variables for an application.
 
-Usage: deis config:list [options]
+Use: talka config:list [options]
 
 Options:
   --oneline
@@ -71,7 +71,7 @@ func configSet(argv []string) error {
 	usage := `
 Sets environment variables for an application.
 
-Usage: deis config:set <var>=<value> [<var>=<value>...] [options]
+Use: talka config:set <var>=<value> [<var>=<value>...] [options]
 
 Arguments:
   <var>
@@ -97,7 +97,7 @@ func configUnset(argv []string) error {
 	usage := `
 Unsets an environment variable for an application.
 
-Usage: deis config:unset <key>... [options]
+Use: talka config:unset <key>... [options]
 
 Arguments:
   <key>
@@ -124,7 +124,7 @@ Extract all environment variables from an application for local use.
 Your environment will be stored locally in a file named .env. This file can be
 read by foreman to load the local environment for your app.
 
-Usage: deis config:pull [options]
+Use: talka config:pull [options]
 
 Options:
   -a --app=<app>
@@ -155,7 +155,7 @@ Sets environment variables for an application.
 The environment is read from <path>. This file can be read by foreman
 to load the local environment for your app.
 
-Usage: deis config:push [options]
+Use: talka config:push [options]
 
 Options:
   -a --app=<app>
