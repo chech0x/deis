@@ -26,7 +26,7 @@ installer: build
 		&& echo 'mueva talka a un directorio que se encuentre agregado' \
 		&& echo 'en la variable de abiente PATH.' \
 		&& echo \
-		&& echo 'Vea http://talka.cl/ para más documentación.' \
+		&& echo 'Vea http://talka.cl/ para mas documentacion.' \
 		&& echo"
 
 setup-root-gotools:
