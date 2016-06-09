@@ -17,12 +17,12 @@ func main() {
 	os.Exit(Command(os.Args[1:]))
 }
 
-// Command routes deis commands to their proper parser.
+// Command routes talka commands to their proper parser.
 func Command(argv []string) int {
 	usage := `
-The Deis command-line client issues API calls to a Deis controller.
+El cliente Talka para línea de comando envía llamados API hacia el controlador Talka.
 
-Usage: deis <command> [<args>...]
+Usage: talka <command> [<args>...]
 
 Option flags::
 
@@ -35,7 +35,7 @@ Auth commands::
   login         login to a controller
   logout        logout from the current controller
 
-Subcommands, use 'deis help [subcommand]' to learn more::
+Subcommands, use 'talka help [subcommand]' to learn more::
 
   apps          manage applications used to provide services
   ps            manage processes inside an app container
@@ -53,7 +53,7 @@ Subcommands, use 'deis help [subcommand]' to learn more::
   users         manage users
   version       display client version
 
-Shortcut commands, use 'deis shortcuts' to see all::
+Shortcut commands, use 'talka shortcuts' to see all::
 
   create        create a new application
   scale         scale processes by type (web=2, worker=1)
@@ -64,7 +64,7 @@ Shortcut commands, use 'deis shortcuts' to see all::
   destroy       destroy an application
   pull          imports an image and deploys as a new release
 
-Use 'git push deis master' to deploy to an application.
+Use 'git push talka master' to deploy to an application.
 `
 	// Reorganize some command line flags and commands.
 	command, argv := parseArgs(argv)
@@ -77,7 +77,7 @@ Use 'git push deis master' to deploy to an application.
 	}
 
 	if len(argv) == 0 {
-		fmt.Fprintln(os.Stderr, "Usage: deis <command> [<args>...]")
+		fmt.Fprintln(os.Stderr, "Usage: talka <command> [<args>...]")
 		return 1
 	}
 
@@ -119,7 +119,7 @@ Use 'git push deis master' to deploy to an application.
 		return 0
 	default:
 		env := os.Environ()
-		extCmd := "deis-" + command
+		extCmd := "talka-" + command
 
 		binary, err := exec.LookPath(extCmd)
 		if err != nil {
@@ -155,16 +155,16 @@ Use 'git push deis master' to deploy to an application.
 func parseArgs(argv []string) (string, []string) {
 	if len(argv) == 1 {
 		if argv[0] == "--help" || argv[0] == "-h" {
-			// rearrange "deis --help" as "deis help"
+			// rearrange "talka --help" as "talka help"
 			argv[0] = "help"
 		} else if argv[0] == "--version" || argv[0] == "-v" {
-			// rearrange "deis --version" as "deis version"
+			// rearrange "talka --version" as "talka version"
 			argv[0] = "version"
 		}
 	}
 
 	if len(argv) >= 2 {
-		// Rearrange "deis help <command>" to "deis <command> --help".
+		// Rearrange "talka help <command>" to "talka <command> --help".
 		if argv[0] == "help" || argv[0] == "--help" || argv[0] == "-h" {
 			argv = append(argv[1:], "--help")
 		}
