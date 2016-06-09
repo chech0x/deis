@@ -33,7 +33,7 @@ func gitRemote(argv []string) error {
 	usage := `
 Adds git remote of application to repository
 
-Use: talka git:remote [options]
+Usage: talka git:remote [options]
 
 Options:
   -a --app=<app>

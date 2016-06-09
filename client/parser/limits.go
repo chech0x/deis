@@ -43,7 +43,7 @@ func limitsList(argv []string) error {
 	usage := `
 Lists resource limits for an application.
 
-Use: talka limits:list [options]
+Usage: talka limits:list [options]
 
 Options:
   -a --app=<app>
@@ -68,7 +68,7 @@ restrictions to either through the scheduler or through the Docker API. This lim
 is applied to each individual container, so setting a memory limit of 1G for an
 application means that each container gets 1G of memory.
 
-Use: talka limits:set [options] <type>=<limit>...
+Usage: talka limits:set [options] <type>=<limit>...
 
 Arguments:
   <type>
@@ -116,7 +116,7 @@ func limitUnset(argv []string) error {
 	usage := `
 Unsets resource limits for an application.
 
-Use: talka limits:unset [options] [--memory | --cpu] <type>...
+Usage: talka limits:unset [options] [--memory | --cpu] <type>...
 
 Arguments:
   <type>

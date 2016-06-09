@@ -43,7 +43,7 @@ func tagsList(argv []string) error {
 	usage := `
 Lists tags for an application.
 
-Use: talka tags:list [options]
+Usage: talka tags:list [options]
 
 Options:
   -a --app=<app>
@@ -67,7 +67,7 @@ A tag is a key/value pair used to tag an application's containers and is passed 
 scheduler. This is often used to restrict workloads to specific hosts matching the
 scheduler-configured metadata.
 
-Use: talka tags:set [options] <key>=<value>...
+Usage: talka tags:set [options] <key>=<value>...
 
 Arguments:
   <key> the tag key, for example: "environ" or "rack"
@@ -94,7 +94,7 @@ func tagsUnset(argv []string) error {
 	usage := `
 Unsets tags for an application.
 
-Use: talka tags:unset [options] <key>...
+Usage: talka tags:unset [options] <key>...
 
 Arguments:
   <key> the tag key to unset, for example: "environ" or "rack"

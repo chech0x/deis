@@ -43,7 +43,7 @@ func certsList(argv []string) error {
 	usage := `
 Show certificate information for an SSL application.
 
-Use: talka certs:list [options]
+Usage: talka certs:list [options]
 
 Options:
   -l --limit=<num>
@@ -69,7 +69,7 @@ func certAdd(argv []string) error {
 	usage := `
 Binds a certificate/key pair to an application.
 
-Use: talka certs:add <cert> <key> [options]
+Usage: talka certs:add <cert> <key> [options]
 
 Arguments:
   <cert>
@@ -104,7 +104,7 @@ func certRemove(argv []string) error {
 	usage := `
 removes a certificate/key pair from the application.
 
-Use: talka certs:remove <cn> [options]
+Usage: talka certs:remove <cn> [options]
 
 Arguments:
   <cn>

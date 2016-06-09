@@ -40,7 +40,7 @@ func buildsList(argv []string) error {
 	usage := `
 Lists build history for an application.
 
-Use: talka builds:list [options]
+Usage: talka builds:list [options]
 
 Options:
   -a --app=<app>
@@ -70,7 +70,7 @@ Creates a new build of an application. Imports an <image> and deploys it to Deis
 as a new release. If a Procfile is present in the current directory, it will be used
 as the default process types for this application.
 
-Use: talka builds:create <image> [options]
+Usage: talka builds:create <image> [options]
 
 Arguments:
   <image>

@@ -38,7 +38,7 @@ func usersList(argv []string) error {
 Lists all registered users.
 Requires admin privilages.
 
-Use: talka users:list [options]
+Usage: talka users:list [options]
 
 Options:
   -l --limit=<num>

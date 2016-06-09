@@ -49,7 +49,7 @@ func configList(argv []string) error {
 	usage := `
 Lists environment variables for an application.
 
-Use: talka config:list [options]
+Usage: talka config:list [options]
 
 Options:
   --oneline
@@ -71,7 +71,7 @@ func configSet(argv []string) error {
 	usage := `
 Sets environment variables for an application.
 
-Use: talka config:set <var>=<value> [<var>=<value>...] [options]
+Usage: talka config:set <var>=<value> [<var>=<value>...] [options]
 
 Arguments:
   <var>
@@ -97,7 +97,7 @@ func configUnset(argv []string) error {
 	usage := `
 Unsets an environment variable for an application.
 
-Use: talka config:unset <key>... [options]
+Usage: talka config:unset <key>... [options]
 
 Arguments:
   <key>
@@ -124,7 +124,7 @@ Extract all environment variables from an application for local use.
 Your environment will be stored locally in a file named .env. This file can be
 read by foreman to load the local environment for your app.
 
-Use: talka config:pull [options]
+Usage: talka config:pull [options]
 
 Options:
   -a --app=<app>
@@ -155,7 +155,7 @@ Sets environment variables for an application.
 The environment is read from <path>. This file can be read by foreman
 to load the local environment for your app.
 
-Use: talka config:push [options]
+Usage: talka config:push [options]
 
 Options:
   -a --app=<app>

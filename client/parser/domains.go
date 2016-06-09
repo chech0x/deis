@@ -42,7 +42,7 @@ func domainsAdd(argv []string) error {
 	usage := `
 Binds a domain to an application.
 
-Use: talka domains:add <domain> [options]
+Usage: talka domains:add <domain> [options]
 
 Arguments:
   <domain>
@@ -66,7 +66,7 @@ func domainsList(argv []string) error {
 	usage := `
 Lists domains bound to an application.
 
-Use: talka domains:list [options]
+Usage: talka domains:list [options]
 
 Options:
   -a --app=<app>
@@ -94,7 +94,7 @@ func domainsRemove(argv []string) error {
 	usage := `
 Unbinds a domain for an application.
 
-Use: talka domains:remove <domain> [options]
+Usage: talka domains:remove <domain> [options]
 
 Arguments:
   <domain>

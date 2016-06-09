@@ -14,7 +14,7 @@ perms:list            list permissions granted on an app
 perms:create          create a new permission for a user
 perms:delete          delete a permission for a user
 
-Use 'deis talka perms:[command]' to learn more.
+Use 'talka help perms:[command]' to learn more.
 `
 	switch argv[0] {
 	case "perms:list":
@@ -43,7 +43,7 @@ func permsList(argv []string) error {
 Lists all users with permission to use an app, or lists all users with system
 administrator privileges.
 
-Use: talka perms:list [-a --app=<app>|--admin|--admin --limit=<num>]
+Usage: talka perms:list [-a --app=<app>|--admin|--admin --limit=<num>]
 
 Options:
   -a --app=<app>
@@ -77,7 +77,7 @@ func permCreate(argv []string) error {
 Gives another user permission to use an app, or gives another user
 system administrator privileges.
 
-Use: talka perms:create <username> [-a --app=<app>|--admin]
+Usage: talka perms:create <username> [-a --app=<app>|--admin]
 
 Arguments:
   <username>
@@ -109,7 +109,7 @@ func permDelete(argv []string) error {
 Revokes another user's permission to use an app, or revokes another user's system
 administrator privileges.
 
-Use: talka perms:delete <username> [-a --app=<app>|--admin]
+Usage: talka perms:delete <username> [-a --app=<app>|--admin]
 
 Arguments:
   <username>

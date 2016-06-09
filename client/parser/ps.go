@@ -43,7 +43,7 @@ func psList(argv []string) error {
 	usage := `
 Lists processes servicing an application.
 
-Use: talka ps:list [options]
+Usage: talka ps:list [options]
 
 Options:
   -a --app=<app>
@@ -71,7 +71,7 @@ func psRestart(argv []string) error {
 	usage := `
 Restart an application, a process type or a specific process.
 
-Use: talka ps:restart [<type>] [options]
+Usage: talka ps:restart [<type>] [options]
 
 Arguments:
   <type>
@@ -96,7 +96,7 @@ func psScale(argv []string) error {
 	usage := `
 Scales an application's processes by type.
 
-Use: talka ps:scale <type>=<num>... [options]
+Usage: talka ps:scale <type>=<num>... [options]
 
 Arguments:
   <type>

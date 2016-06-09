@@ -46,7 +46,7 @@ func releasesList(argv []string) error {
 	usage := `
 Lists release history for an application.
 
-Use: talka releases:list [options]
+Usage: talka releases:list [options]
 
 Options:
   -a --app=<app>
@@ -74,7 +74,7 @@ func releasesInfo(argv []string) error {
 	usage := `
 Prints info about a particular release.
 
-Use: talka releases:info <version> [options]
+Usage: talka releases:info <version> [options]
 
 Arguments:
   <version>
@@ -100,7 +100,7 @@ func releasesRollback(argv []string) error {
 	usage := `
 Rolls back to a previous application release.
 
-Use: talka releases:rollback [<version>] [options]
+Usage: talka releases:rollback [<version>] [options]
 
 Arguments:
   <version>

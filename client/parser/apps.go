@@ -22,7 +22,7 @@ apps:run           run a command in an ephemeral app container
 apps:destroy       destroy an application
 apps:transfer      transfer app ownership to another user
 
-Use 'deis talka [command]' to learn more.
+Use 'talka help [command]' to learn more.
 `
 
 	switch argv[0] {
@@ -63,7 +63,7 @@ Creates a new application.
 
 - if no <id> is provided, one will be generated automatically.
 
-Use: talka apps:create [<id>] [options]
+Usage: talka apps:create [<id>] [options]
 
 Arguments:
   <id>
@@ -121,7 +121,7 @@ func appInfo(argv []string) error {
 	usage := `
 Prints info about the current application.
 
-Use: talka apps:info [options]
+Usage: talka apps:info [options]
 
 Options:
   -a --app=<app>
@@ -142,7 +142,7 @@ func appOpen(argv []string) error {
 	usage := `
 Opens a URL to the application in the default browser.
 
-Use: talka apps:open [options]
+Usage: talka apps:open [options]
 
 Options:
   -a --app=<app>
@@ -163,7 +163,7 @@ func appLogs(argv []string) error {
 	usage := `
 Retrieves the most recent log events.
 
-Use: talka apps:logs [options]
+Usage: talka apps:logs [options]
 
 Options:
   -a --app=<app>
@@ -200,7 +200,7 @@ func appRun(argv []string) error {
 Runs a command inside an ephemeral app container. Default environment is
 /bin/bash.
 
-Use: talka apps:run [options] [--] <command>...
+Usage: talka apps:run [options] [--] <command>...
 
 Arguments:
   <command>
@@ -226,7 +226,7 @@ func appDestroy(argv []string) error {
 	usage := `
 Destroys an application.
 
-Use: talka apps:destroy [options]
+Usage: talka apps:destroy [options]
 
 Options:
   -a --app=<app>
@@ -252,7 +252,7 @@ func appTransfer(argv []string) error {
 	usage := `
 Transfer app ownership to another user.
 
-Use: talka apps:transfer <username> [options]
+Usage: talka apps:transfer <username> [options]
 
 Arguments:
   <username>

@@ -22,7 +22,7 @@ func Command(argv []string) int {
 	usage := `
 El cliente Talka para linea de comando envia llamados API hacia el controlador Talka.
 
-Uso: talka <comando> [<args>...]
+Usage: talka <comando> [<args>...]
 
 Banderas opcionales ::
 
@@ -77,7 +77,7 @@ Use 'git push talka master' para instalar una aplicacion.
 	}
 
 	if len(argv) == 0 {
-		fmt.Fprintln(os.Stderr, "Uso: talka <comando> [<args>...]")
+		fmt.Fprintln(os.Stderr, "Usage: talka <comando> [<args>...]")
 		return 1
 	}
 

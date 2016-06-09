@@ -12,7 +12,7 @@ func Version(argv []string) error {
 	usage := `
 Displays the client version.
 
-Use: talka version
+Usage: talka version
 
 Use 'talka help [command]' to learn more.
 `
