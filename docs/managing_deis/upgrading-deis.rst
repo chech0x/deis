@@ -41,10 +41,10 @@ Finally, update ``deisctl`` to the new version and reinstall:
 
 .. code-block:: console
 
-    $ curl -sSL http://deis.io/deisctl/install.sh | sh -s 1.13.1
+    $ curl -sSL http://deis.io/deisctl/install.sh | sh -s 1.13.3
     $ deisctl --version  # should match the desired platform
-    1.13.1
-    $ deisctl config platform set version=v1.13.1
+    1.13.3
+    $ deisctl config platform set version=v1.13.3
     $ deisctl install platform
     $ deisctl start platform
 
@@ -58,10 +58,16 @@ Finally, update ``deisctl`` to the new version and reinstall:
     When upgrading an AWS cluster older than Deis v1.6, a :ref:`migration_upgrade` is
     preferable.
 
-    On AWS, Deis enables the :ref:`PROXY protocol <proxy_protocol>` by default.
-    If an in-place upgrade is required, run ``deisctl config router set proxyProtocol=1``,
-    enable PROXY protocol for ports 80 and 443 on the ELB, add a ``TCP 443:443`` listener, and
-    change existing targets and health checks from HTTP to TCP.
+    On AWS, Deis v1.6 and above enables the :ref:`PROXY protocol <proxy_protocol>` by default.
+    If an in-place upgrade is required on a cluster running a version older than v1.6,
+    run ``deisctl config router set proxyProtocol=1``, enable PROXY protocol for ports 80 and
+    443 on the ELB, add a ``TCP 443:443`` listener.
+    
+    Elastic Load Balancer is set to perform health checks to make sure your instances are alive.
+    When you take your cluster down, there will be a brief period that your instances will be
+    marked as ``OutOfService``. If deis-cli can't connect to your cluster, check your EC2 Load
+    Balancer's health check status in the AWS web console. Wait for the instances to return to
+    ``InService`` status.
 
 Upgrade Deis clients
 ^^^^^^^^^^^^^^^^^^^^
@@ -99,11 +105,11 @@ to. Care should be taken not to overwrite the existing ``deisctl`` version.
 .. code-block:: console
 
     $ mkdir /tmp/upgrade
-    $ curl -sSL http://deis.io/deisctl/install.sh | sh -s 1.13.1 /tmp/upgrade
+    $ curl -sSL http://deis.io/deisctl/install.sh | sh -s 1.13.3 /tmp/upgrade
     $ /tmp/upgrade/deisctl --version  # should match the desired platform
-    1.13.1
+    1.13.3
     $ /tmp/upgrade/deisctl refresh-units
-    $ /tmp/upgrade/deisctl config platform set version=v1.13.1
+    $ /tmp/upgrade/deisctl config platform set version=v1.13.3
 
 Now it is possible to prepare the cluster for the upgrade using the old ``deisctl`` binary. This command will shutdown
 and uninstall all components of the cluster except the router and publisher. This means your services should still be
@@ -128,7 +134,7 @@ If the process were to fail, the old version can be restored manually by reinsta
 
     $ /tmp/upgrade/deisctl stop platform
     $ /tmp/upgrade/deisctl uninstall platform
-    $ /tmp/upgrade/deisctl config platform set version=v1.13.1
+    $ /tmp/upgrade/deisctl config platform set version=v1.13.3
     $ /opt/bin/deisctl refresh-units
     $ /opt/bin/deisctl install platform
     $ /opt/bin/deisctl start platform

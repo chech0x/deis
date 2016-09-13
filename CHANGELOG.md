@@ -1,3 +1,49 @@
+### v1.13.2 -> v1.13.3
+
+#### Features
+
+ - [`d369fd7`](https://github.com/deis/deis/commit/d369fd7e811c24d9da4eb907fd1237400cc15114) contrib: Add script to restart all apps.
+ - [`ef80d81`](https://github.com/deis/deis/commit/ef80d818b01de5e69888192fb855c63374fce9cc) client: Sort listings
+ - [`968c48c`](https://github.com/deis/deis/commit/968c48c859e92539173032f26aa95afe6478a455) router: Add server_tokens option
+
+#### Fixes
+
+ - [`d143b4b`](https://github.com/deis/deis/commit/d143b4bf7ba7cb14236748dc6e421554c95ecba8) logspout: Ignore events with short ID
+
+#### Documentation
+
+ - [`6da7204`](https://github.com/deis/deis/commit/6da72045a36a49d6e6c8b4dbe59ff66695cc927d) dockerfiles: Make Bash requirement explicit in the documentation
+
+#### Maintenance
+
+ - [`e30db13`](https://github.com/deis/deis/commit/e30db1391800284edf0937d5abfa7956179802af) buildpacks: update go, scala, and php buildpacks
+ - [`fc1518a`](https://github.com/deis/deis/commit/fc1518a66b9d28d29626696d11be07749cc121a1) (all): update base to alpine:3.4
+ - [`fd35c66`](https://github.com/deis/deis/commit/fd35c66ab16c4a621e42f2f42da5b66cb2c63cda) planning: add July and August, up next, September
+ - [`3ef983f`](https://github.com/deis/deis/commit/3ef983f8c5c7c2d57f3261789a15443fb021f22e) (all): bump CoreOS to 1068.8.0
+ - [`167a44a`](https://github.com/deis/deis/commit/167a44a43880ce47509651c3ee2507e9c4e3abca) buildpacks: update go, php, nodejs, python, and scala buildpacks
+ - [`8342efc`](https://github.com/deis/deis/commit/8342efc2b78b7691e2578e1ac719953739fea908) roadmap: clarify Deis v1 roadmap status
+
+### v1.13.1 -> v1.13.2
+
+#### Fixes
+ - [`5888a46`](https://github.com/deis/deis/commit/5888a464c39b10ec236e51d784d7a8752d99980a) deisctl: replace -c with --cpu-shares
+ - [`bd827ce`](https://github.com/deis/deis/commit/bd827cea49e5ad61b127b0ca824ee81319b6f73e) Makefile: remove old "go vet" install command
+
+#### Documentation
+
+ - [`62f1696`](https://github.com/deis/deis/commit/62f169691c3b1f6fe7591d88162f63255f866b03) upgrading: clarify AWS-specific instructions
+
+#### Maintenance
+
+ - [`b795d8d`](https://github.com/deis/deis/commit/b795d8d52975e07164a0628dce14f180888d946c) planning: update for june/july community meetings
+ - [`6ca0414`](https://github.com/deis/deis/commit/6ca04149b068a166170031991b491b0bcb845b44) buildpacks: update heroku-buildpack-scala to v70
+ - [`1d89269`](https://github.com/deis/deis/commit/1d892694cbf3a3f176dc90ad66f4d3efa76abcdc) buildpacks: update heroku-buildpack-php to v105
+ - [`750e5e9`](https://github.com/deis/deis/commit/750e5e9e0f9e810ed5ecc2f1f08ba9473cafa7d5) buildpacks: update heroku-buildpack-go to v41
+ - [`db9542a`](https://github.com/deis/deis/commit/db9542a6c7e1e87e9bd52b3e87b2ed92e1c19dc4) Revert (all): bump CoreOS to 1010.5.0
+ - [`c89e903`](https://github.com/deis/deis/commit/c89e903d28674922d926dea52cef8031d508b6d3) (all): bump CoreOS to 1010.5.0
+ - [`885d7ef`](https://github.com/deis/deis/commit/885d7ef297eeffc4343b887120d1bca0a0a04568) buildpacks: update heroku-buildpack-python to v80
+ - [`955dcea`](https://github.com/deis/deis/commit/955dcea900d6822590c8bb01bb30d9fbf9190ac6) planning: updates for May planning
+
 ### v1.13.0 -> v1.13.1
 
 #### Fixes

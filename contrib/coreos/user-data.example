@@ -43,6 +43,10 @@ coreos:
       enable: false
     - name: docker.service
       drop-ins:
+      - name: 00-reset-environment.conf
+        content: |
+          [Service]
+          Environment=
       - name: 10-require-flannel.conf
         content: |
           [Unit]
@@ -52,6 +56,10 @@ coreos:
         content: |
           [Service]
           Environment="DOCKER_OPTS=--insecure-registry 10.0.0.0/8 --insecure-registry 172.16.0.0/12 --insecure-registry 192.168.0.0/16 --insecure-registry 100.64.0.0/10"
+      - name: 60-cgroup-driver.conf
+        content: |
+          [Service]
+          Environment="DOCKER_CGROUPS=--exec-opt native.cgroupdriver=cgroupfs"
     - name: flanneld.service
       command: start
       drop-ins:
@@ -103,7 +111,7 @@ coreos:
 
         [Service]
         Type=oneshot
-        ExecStart=/usr/bin/sh -c 'curl -sSL --retry 5 --retry-delay 2 http://deis.io/deisctl/install.sh | sh -s 1.13.1'
+        ExecStart=/usr/bin/sh -c 'curl -sSL --retry 5 --retry-delay 2 http://deis.io/deisctl/install.sh | sh -s 1.13.3'
     - name: increase-nf_conntrack-connections.service
       command: start
       content: |
@@ -117,7 +125,7 @@ coreos:
 write_files:
   - path: /etc/deis-release
     content: |
-      DEIS_RELEASE=v1.13.1
+      DEIS_RELEASE=v1.13.3
   - path: /etc/motd
     content: " \e[31m* *    \e[34m*   \e[32m*****    \e[39mddddd   eeeeeee iiiiiii   ssss\n\e[31m*   *  \e[34m* *  \e[32m*   *     \e[39md   d   e    e    i     s    s\n \e[31m* *  \e[34m***** \e[32m*****     \e[39md    d  e         i    s\n\e[32m*****  \e[31m* *    \e[34m*       \e[39md     d e         i     s\n\e[32m*   * \e[31m*   *  \e[34m* *      \e[39md     d eee       i      sss\n\e[32m*****  \e[31m* *  \e[34m*****     \e[39md     d e         i         s\n  \e[34m*   \e[32m*****  \e[31m* *      \e[39md    d  e         i          s\n \e[34m* *  \e[32m*   * \e[31m*   *     \e[39md   d   e    e    i    s    s\n\e[34m***** \e[32m*****  \e[31m* *     \e[39mddddd   eeeeeee iiiiiii  ssss\n\n\e[39mWelcome to Deis\t\t\tPowered by Core\e[38;5;45mO\e[38;5;206mS\e[39m\n"
   - path: /etc/profile.d/nse-function.sh
